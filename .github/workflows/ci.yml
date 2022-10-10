@@ -1,4 +1,4 @@
-name: CI enabled
+name: CI
 
 on: [push, pull_request]
 
@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Hello Wordl!
+        run: echo "Hello!! from ${{github.workflow}} triggered by the ${{github.event_name}} done by ${{github.actor}}"
       - uses: actions/checkout@v1
 
       - name: Set up JDK 1.8
