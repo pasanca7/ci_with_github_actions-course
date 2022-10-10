@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Hello Wordl!
-        run: echo "Hello!! from ${{github.workflow}} triggered by the ${{github.event_name}} done by ${{github.actor}}"
+        run: echo "Hello Wordl!! from ${{github.workflow}} triggered by the ${{github.event_name}} done by ${{github.actor}}"
       
       - name: More and more
         env:
