@@ -10,6 +10,14 @@ jobs:
     steps:
       - name: Hello Wordl!
         run: echo "Hello!! from ${{github.workflow}} triggered by the ${{github.event_name}} done by ${{github.actor}}"
+      
+      - name: More and more
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: |
+          echo "Job Context: $JOB_CONTEXT"
+          echo "Done!"
+      
       - uses: actions/checkout@v1
 
       - name: Set up JDK 1.8
