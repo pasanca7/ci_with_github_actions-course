@@ -21,7 +21,7 @@ jobs:
           echo "Done!"
 
       - name: Install dependencies
-        working-directory: ./lessons/03-Continuous_Integration/03.1-Executing_tests
+        working-directory: ../../lessons/03-Continuous_Integration/03.1-Executing_tests
         run: composer install --ignore-platform-reqs
 
       - name: Run the tests
