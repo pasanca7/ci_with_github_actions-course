@@ -17,6 +17,14 @@ jobs:
         run: |
           echo "Job Context: $JOB_CONTEXT"
           echo "Done!"
+
+      - name: Install dependencies
+        working-directory: ./lessons/03-Continuous_Integration/03.1-Executing_tests
+        run: compose install --ignore-platform-reqs
+
+      - name: Run tests
+        working-directory: ./lessons/03-Continuous_Integration/03.1-Executing_tests
+        run: composer phpunit
       
       - uses: actions/checkout@v1
 
