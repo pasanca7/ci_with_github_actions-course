@@ -21,8 +21,10 @@ jobs:
           echo "Done!"
 
       - name: Install dependencies
-        working-directory: ./lessons/
-        run: pwd
+        working-directory: ./lessons/03-Continuous_Integration
+        run: |
+          pwd
+          ls
 
       # - name: Run the tests
       #   working-directory: ./lessons/03-Continuous_Integration/03.1-Executing_tests
