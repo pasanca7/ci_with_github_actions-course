@@ -1,16 +1,18 @@
-name: CI
+name: First workflow
 
 on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
+
     steps:
-      - name: Hello Wordl!
-        run: echo "Hello!! from ${{github.workflow}} triggered by the ${{github.event_name}} done by ${{github.actor}}"
-      
+      - uses: actions/checkout@v2
+
+      - name: Hello Codelies!
+        run: echo "Hello!!!! from ${{ github.workflow }} triggered by the ${{ github.event_name }} done by ${{ github.actor }}"
+
       - name: 😊 More and more
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
@@ -25,4 +27,3 @@ jobs:
       - name: Run the tests
         working-directory: ./lessons/03-Continuous_Integration/03.1-Executing_tests
         run: composer phpunit
-
